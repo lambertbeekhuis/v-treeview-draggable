@@ -2,6 +2,8 @@
 
 This repo contains a Vuetify-draggable-treeview component based upon [Suusan2go/vuetify-draggable-treeview](https://github.com/suusan2go/vuetify-draggable-treeview), but now supporting Vuetify 2.2 
 
+A draggable v-treeview component is a highly [requested feature #5585](https://github.com/vuetifyjs/vuetify/issues/5585), but yet not added to vuetify
+
 Above library is based upon vuetify 2.1, and in vuetify 2.2 the alignment is handled differently [fix VTreeview](https://github.com/vuetifyjs/vuetify/pull/9640).
 
 So what I did:
