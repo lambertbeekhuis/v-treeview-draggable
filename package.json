@@ -1,12 +1,27 @@
 {
-  "name": "v-treeview-draggable-app",
+  "name": "v-treeview-draggable",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": {
+    "name": "Lambert Beekhuis",
+    "email": "lambert.beekhuis2@gmail.com"
+  },
   "scripts": {
     "serve": "vue-cli-service serve --port 8082",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-bundle": "vue-cli-service build --target lib --name vTreeviewDraggable ./src/components/VTreeviewDraggable.vue"
   },
+  "main": "dist/VTreeviewDraggable",
+  "unpkg": "dist/VTreeviewDraggable.umd.min.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js",
+    "plugins/*"
+  ],
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",

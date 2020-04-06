@@ -36,5 +36,13 @@ yarn build
 yarn lint
 ```
 
+### Build an NPM-packege (attempt)
+```
+yarn build-bundle
+```
+
+The build packages become quite large, cannot be true for basic components
+
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
