@@ -1,8 +1,8 @@
 <template>
-    <div :class="`v-treeview-node v-treeview-node--click ${hasChildren ? '' : 'v-treeview-node--leaf'}`">
+    <div :class="['v-treeview-node v-treeview-node--click', {'v-treeview-node--leaf' : !hasChildren}]">
         <div class="v-treeview-node__root" @click="open = !open">
-            <div v-for="levelNr in levelArray" :key="levelNr" class="v-treeview-node__level"></div>
-            <i v-if="hasChildren" role="button" class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down"
+            <div v-for="levelNr in levelsToAddArray" :key="levelNr" class="v-treeview-node__level"></div>
+            <button v-if="hasChildren" type="button"  class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down"
                 :class="{
                       'v-treeview-node__toggle--open': open,
                       'theme--dark': isDark,
@@ -10,7 +10,7 @@
                     }"
             />
             <div class="v-treeview-node__content">
-                <div class="v-treeview-node__prepend">
+                <div v-if="$slots['prepend']" class="v-treeview-node__prepend">
                     <slot name="prepend" v-bind="{ item: value, open }" />
                 </div>
                 <div class="v-treeview-node__label">
@@ -18,12 +18,12 @@
                         {{ value.name }}
                     </slot>
                 </div>
-                <div class="v-treeview-node__append">
+                <div v-if="$slots['append']"class="v-treeview-node__append">
                     <slot name="append" v-bind="{ item: value }" />
                 </div>
             </div>
         </div>
-        <div v-if="open" class="v-treeview-node__children v-treeview-node__children__draggable">
+        <div v-if="hasChildren && open" class="v-treeview-node__children v-treeview-node__children__draggable">
             <draggable
                 :group="group"
                 :value="value.children"
@@ -104,13 +104,15 @@
         },
         computed: {
             hasChildren: function () {
-                return this.value.children != null && this.value.children.length > 0;
+                let result = this.value.children != null && this.value.children.length > 0;
+                console.log(result);
+                return result;
             },
             isDark: function () {
                 return this.$vuetify.theme.isDark;
             },
-            levelArray: function () {
-              return Array.from(Array(this.level).keys());
+            levelsToAddArray: function () {
+              return Array.from(Array(this.level + (this.hasChildren ? 0 : 1)).keys());
             }
         },
         watch: {

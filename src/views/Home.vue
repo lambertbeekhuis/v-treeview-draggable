@@ -1,10 +1,21 @@
 <template>
   <div class="home">
-    Home pagina
+    <h1>Vuetify v-treeview and v-treeview-draggable</h1>
 
-    <div>
-    <v-treeview-draggable v-model="animals"></v-treeview-draggable>
-    </div>
+    <v-row>
+      <v-col cols="4">
+        <h3 >Vuetify v-treeview - no dragging</h3>
+        <div>
+          <v-treeview :items="animals"></v-treeview>
+        </div>
+      </v-col>
+
+
+      <v-col cols="4">
+        <h3>v-treeview-draggable - with dragging</h3>
+          <v-treeview-draggable v-model="animals"></v-treeview-draggable>
+      </v-col>
+    </v-row>
 
   </div>
 </template>
@@ -20,20 +31,25 @@ export default {
   data () {
     return {
       animals: [
-        {id: 1, name: 'mamal', children: [
+        {id: 1, name: 'mamals', children: [
             {id: 10, name: 'elephant', children: [
                 {id: 101, name: 'indian', children: []},
-                {id: 101, name: 'african', children: []},
+                {id: 102, name: 'african', children: []},
               ]},
             {id: 11, name: 'lion', children: []},
             {id: 12, name: 'buffalo', children: []},
-
-          ]},
-        {id: 2, name: 'reptiles', children: [
-            {id: 20, name: 'crocodile', children: []},
-            {id: 21, name: 'snake', children: []},
-          ]},
-        {id: 2, name: 'reptiles', children: []},
+          ]
+        },
+        {id: 2, name: 'amfibies', children: [
+            {id: 20, name: 'salamander', children: []},
+          ]
+        },
+        {id: 3, name: 'reptiles', children: [
+            {id: 30, name: 'crocodile', children: []},
+            {id: 31, name: 'snake', children: []},
+          ]
+        },
+        {id: 4, name: 'birds', children: []},
       ]
     }
   },
