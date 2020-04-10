@@ -14,14 +14,14 @@
             :value="item"
             @input="updateItem"
         >
-            <template v-slot:prepend="{ item, open }">
-                <slot name="prepend" v-bind="{ item, open }"> </slot>
+            <template v-if="hasSlotPrepend" v-slot:prepend="{ item, open }">
+                <slot name="prepend" v-bind="{ item, open }"></slot>
             </template>
             <template v-slot:label="{ item, open }">
-                <slot name="label" v-bind="{ item, open }"> </slot>
+                <slot name="label" v-bind="{ item, open }"></slot>
             </template>
-            <template v-slot:append="{ item, open }">
-                <slot name="append" v-bind="{ item, open }"> </slot>
+            <template v-if="hasSlotAppend" v-slot:append="{ item, open }">
+                <slot name="append" v-bind="{ item, open }"></slot>
             </template>
         </v-treeview-draggable-node>
     </draggable>
@@ -58,9 +58,19 @@
             };
         },
         computed: {
-            themeClassName: function () {
-                return this.$vuetify.theme.isDark ? "theme--dark" : "theme--light";
-            }
+          themeClassName: function () {
+            return this.$vuetify.theme.isDark ? "theme--dark" : "theme--light";
+          },
+
+          hasSlotPrepend () {
+            return !!this.$scopedSlots['prepend'] || !!this.$slots['prepend'];
+          },
+
+          hasSlotAppend () {
+            let result = !!this.$slots['append'] || !!this.$scopedSlots['append'];
+            console.log('append-root', !!this.$scopedSlots['append']);
+            return !!this.$scopedSlots['append'] || !!this.$slots['append'] ;
+          },
         },
         watch: {
             value(value) {

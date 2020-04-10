@@ -3,18 +3,31 @@
     <h1>Vuetify v-treeview and v-treeview-draggable</h1>
 
     <v-row>
+
       <v-col cols="4">
-        <h3 >Vuetify v-treeview - no dragging</h3>
+        <h3>v-treeview-draggable - with dragging within branch only</h3>
+        <v-treeview-draggable v-model="animals"></v-treeview-draggable>
+      </v-col>
+
+      <v-col cols="4">
+        <h3>v-treeview-draggable - with dragging within whole tree, with slots</h3>
+        <v-treeview-draggable v-model="animals" group="all">
+          <template v-slot:prepend="{ item }">
+            {{item.id}}
+          </template>
+          <template v-slot:append="{ item }">
+            {{item.name}}
+          </template>
+        </v-treeview-draggable>
+      </v-col>
+
+      <v-col cols="4">
+        <h3>Vuetify's v-treeview - no dragging</h3>
         <div>
           <v-treeview :items="animals"></v-treeview>
         </div>
       </v-col>
 
-
-      <v-col cols="4">
-        <h3>v-treeview-draggable - with dragging</h3>
-          <v-treeview-draggable v-model="animals"></v-treeview-draggable>
-      </v-col>
     </v-row>
 
   </div>
