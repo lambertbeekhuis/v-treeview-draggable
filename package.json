@@ -7,7 +7,7 @@
     "email": "lambert.beekhuis2@gmail.com"
   },
   "license": "MIT",
-  "main": "dist/VTreeviewDraggable",
+  "main": "dist/VTreeviewDraggable.common.js",
   "unpkg": "dist/VTreeviewDraggable.umd.min.js",
   "files": [
     "dist/*",
