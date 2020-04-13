@@ -1,12 +1,16 @@
 {
   "name": "v-treeview-draggable",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "author": {
     "name": "Lambert Beekhuis",
     "email": "lambert.beekhuis2@gmail.com"
   },
   "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/lambertbeekhuis/v-treeview-draggable"
+  },
   "main": "dist/VTreeviewDraggable.common.js",
   "unpkg": "dist/VTreeviewDraggable.umd.min.js",
   "files": [
