@@ -7,12 +7,6 @@
     "email": "lambert.beekhuis2@gmail.com"
   },
   "license": "MIT",
-  "scripts": {
-    "serve": "vue-cli-service serve --port 8082",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "build-bundle": "vue-cli-service build --target lib --name vTreeviewDraggable ./src/components/VTreeviewDraggable.vue"
-  },
   "main": "dist/VTreeviewDraggable",
   "unpkg": "dist/VTreeviewDraggable.umd.min.js",
   "files": [
@@ -23,6 +17,12 @@
     "*.js",
     "plugins/*"
   ],
+  "scripts": {
+    "serve": "vue-cli-service serve --port 8082",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build-bundle": "vue-cli-service build --target lib --name vTreeviewDraggable ./src/components/VTreeviewDraggable.vue"
+  },
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
