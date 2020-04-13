@@ -6,6 +6,7 @@
     "name": "Lambert Beekhuis",
     "email": "lambert.beekhuis2@gmail.com"
   },
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve --port 8082",
     "build": "vue-cli-service build",
@@ -25,10 +26,8 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
-    "vue-router": "^3.1.5",
     "vuedraggable": "^2.23.2",
-    "vuetify": "^2.2.20",
-    "vuex": "^3.1.2"
+    "vuetify": "^2.2.20"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
