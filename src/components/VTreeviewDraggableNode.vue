@@ -54,7 +54,7 @@
 </template>
 
 <script>
-    import Draggable from "vuedraggable";
+    import draggable from "vuedraggable";
     /*
     type TreeItem = {
         id: number;
@@ -65,7 +65,7 @@
     export default {
         name: "VTreeviewDraggableNode",
         components: {
-            Draggable
+            draggable
         },
         props: {
             value: {
